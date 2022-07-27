@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Book Recommender system </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        .text-white{
+            color:white
+        }
+    </style>
+</head>
+<body style="background-color:black">
+
+  <nav class="navbar" style="background-color:#00a65a">
+        <a class="navbar-brand text-white" href="/">My Book recommender</a>
+        <ul class="nav navbar-nav">
+            <li><a href="/" >Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+<div class="container mt-5">
+    <h1 class="text-white">Contact Me!</h1>
+    <form class="row g-3">
+        <div class="col-md-6">
+           <label for="fristName" class="form-label text-white">First Name</label>
+            <input type="text" class="form-control" id="fristName" required >
+        </div>
+
+        <div class="col-md-6">
+            <label for="lastName" class="form-label text-white">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required >
+        </div>
+
+        <div class="col-md-8">
+            <label for="emailInfo" class="form-label text-white">E-mail</label>
+            <input type="email" class="form-control" id="emailInfo" required>
+        </div>
+
+        <div class="col-md-4" style="margin-top:30px">
+            <label for="phoneNumber" class="from-label text-white" >Phone Number</label>
+            <input type="text" class="from-control" id="phoneNumber" required placeholder="+91 88765-34228">
+        </div>
+
+        <div class="col-md-12" style="margin-top:30px">
+            <label for="comments" class="form-label text-white" >Comments, Questions?</label>
+            <textarea class="from-control" id="comments" rows="10" cols="100" required ></textarea>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
