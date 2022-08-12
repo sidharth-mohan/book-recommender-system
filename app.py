@@ -1,6 +1,10 @@
 import numpy as np
 import pickle
 from flask import Flask,render_template,request
+import os
+picfolder = os.path.join('static', 'images')
+
+
 
 popular_df=pickle.load(open('popular.pkl','rb'))
 pt = pickle.load(open('pt.pkl','rb'))
@@ -9,7 +13,7 @@ books = pickle.load(open('books.pkl','rb'))
 
 app= Flask(__name__)
 
-
+app.config['UPLOAD_FOLDER'] = picfolder
 @app.route('/')
 def index():
     return render_template('index.html',
@@ -22,10 +26,12 @@ def index():
 
 @app.route('/recommend')
 def recommend_ui():
-    return render_template('recommend.html',methods=['POST'])
+    pic1=os.path.join(app.config['UPLOAD_FOLDER'],'book logo 2.png')
+    return render_template('recommend.html',methods=['POST'],user_image=pic1)
 
 @app.route('/recommend_books',methods=['post'])
 def recommend():
+
     user_input = request.form.get('user_input')
     index = np.where(pt.index == user_input)[0][0]
     similar_items = sorted(list(enumerate(similarity_score[index])), key=lambda x: x[1], reverse=True)[1:5]

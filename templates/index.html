@@ -15,20 +15,20 @@
 <body style="background-color:black">
 
   <nav class="navbar" style="background-color:#00a65a">
-        <a class="navbar-brand text-white"  href="/" >My Book recommender</a>
+        <a class="navbar-brand text-white"  href="/recommend" >My Book Recommender</a>
         <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a class="text-white" href="/">Home</a></li>
+            <li><a class="text-white" href="/recommend">Recommend</a></li>
+            <li><a class="text-white" href="/contact">Contact</a></li>
         </ul>
     </nav>
 
   <div class="container">
       <div class="rwo">
+          <a href="/recommend" class="btn btn-primary btn-lg btn-block" role="button">Recommend ME !!</a>
           <div class="col-md-12">
-              <h1 class="text-white"> Top 50 Books </h1>
+              <h1 class="text-white"> Top 50 Books For You </h1>
           </div>
-
           {% for i in range(book_name|length) %}
               <div class="col-md-3" style="margin-top:40px">
                   <div class="card">
